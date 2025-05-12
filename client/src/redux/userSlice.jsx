@@ -4,7 +4,7 @@ import axios from 'axios';
 // Fetch all users
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   const token = localStorage.getItem('token');
-  const res = await axios.get('http://localhost:5000/api/users', {
+  const res = await axios.get('https://role-panel-1.onrender.com/api/users', {
     headers: { Authorization: `Bearer ${token}` },
   });
   return res.data;
@@ -16,7 +16,7 @@ export const assignRole = createAsyncThunk(
   async ({ id, role }, { dispatch }) => {
     const token = localStorage.getItem('token');
     await axios.put(
-      `http://localhost:5000/api/users/${id}/role`,
+      `https://role-panel-1.onrender.com/api/users/${id}/role`,
       { role },
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -32,7 +32,7 @@ export const assignToTeam = createAsyncThunk(
   async ({ managerId, employeeId }, { dispatch }) => {
     const token = localStorage.getItem('token');
     await axios.put(
-      `http://localhost:5000/api/users/${managerId}/team`,
+      `https://role-panel-1.onrender.com/api/users/${managerId}/team`,
       { employeeId },
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -45,7 +45,7 @@ export const assignToTeam = createAsyncThunk(
 // Fetch manager's team
 export const fetchManagerTeam = createAsyncThunk('users/fetchManagerTeam', async () => {
   const token = localStorage.getItem('token');
-  const res = await axios.get('http://localhost:5000/api/users/team', {
+  const res = await axios.get('https://role-panel-1.onrender.com/api/users/team', {
     headers: { Authorization: `Bearer ${token}` },
   });
   return res.data; // Returns the manager's team

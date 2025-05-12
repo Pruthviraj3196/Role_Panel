@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API = 'http://localhost:5000/api/orders';
+const API = 'https://role-panel-1.onrender.com/api/orders';
 
 export const fetchOrders = createAsyncThunk('orders/fetch', async () => {
   const token = localStorage.getItem('token');

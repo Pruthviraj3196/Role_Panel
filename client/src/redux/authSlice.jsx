@@ -12,7 +12,7 @@ const initialState = {
 
 // Login user
 export const loginUser = createAsyncThunk('auth/login', async (data) => {
-  const res = await axios.post('http://localhost:5000/api/auth/login', data);
+  const res = await axios.post('https://role-panel-1.onrender.com/api/auth/login', data);
   const { token, user } = res.data;
   localStorage.setItem('token', token);
   localStorage.setItem('user', JSON.stringify(user));
@@ -21,7 +21,7 @@ export const loginUser = createAsyncThunk('auth/login', async (data) => {
 
 // Signup user
 export const signupUser = createAsyncThunk('auth/signup', async (data) => {
-  const res = await axios.post('http://localhost:5000/api/auth/signup', data);
+  const res = await axios.post('https://role-panel-1.onrender.com/api/auth/signup', data);
   return res.data;
 });
 
