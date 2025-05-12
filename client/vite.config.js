@@ -16,7 +16,7 @@ import react from '@vitejs/plugin-react';
     server: {
       host: '0.0.0.0',
       port: 4562,
-      allowedHosts: ['role-panel-1.onrender.com'],
+      allowedHosts: ['role-panel-2.onrender.com'],
       proxy: {
         '/api': {
           target: "https://role-panel-1.onrender.com",
